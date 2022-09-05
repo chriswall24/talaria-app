@@ -36,31 +36,32 @@ function App() {
   return (
     <div className="App">
       <h1>Talaria</h1>
+      <h2>Sign up for KNOWLEDGE</h2>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
+        placeholder="Username"
         value={formData.name}
       />
       <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
+        placeholder="Email"
         value={formData.description}
       />
-      <button onClick={createNote}>Create Note</button>
+      <button onClick={createNote}>Create User</button>
       <div style={{marginBottom: 30}}>
         {
           notes.map(note => (
             <div key={note.id || note.name}>
               <h2>{note.name}</h2>
               <p>{note.description}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
+              <button onClick={() => deleteNote(note)}>Delete User</button>
             </div>
           ))
         }
       </div>
-      <AmplifySignOut />
+      {/* <AmplifySignOut /> */}
     </div>
   );
 }
 
-export default withAuthenticator(App);
+export default App;
